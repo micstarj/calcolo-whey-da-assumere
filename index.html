@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quanta whey oggi?</title>
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta name="apple-mobile-web-app-title" content="Whey">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--text:#1d1d1b;--muted:#6b6a64;--line:#e3e1d9;--accent:#1f7a5a;--accent-bg:#e2f2ec;--warn:#b4541a;--warn-bg:#fbeadf;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--card:#1e1e1c;--text:#f0efe9;--muted:#a09f97;--line:#33322e;--accent:#5fcfa5;--accent-bg:#17352b;--warn:#f0a070;--warn-bg:#3a261a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141413;--card:#1e1e1c;--text:#f0efe9;--muted:#a09f97;--line:#33322e;--accent:#5fcfa5;--accent-bg:#17352b;--warn:#f0a070;--warn-bg:#3a261a;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+main{max-width:520px;margin:0 auto;padding:16px}
+h1{font-size:1.35rem;margin:4px 0 12px}
+.sticky{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;margin:0 -16px 10px;padding:8px 16px;background:var(--bg);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:.95rem}
+.sticky b{color:var(--accent);font-size:1.1rem}
+details.meal{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}
+details.meal>summary{list-style:none;cursor:pointer;padding:14px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:1.05rem}
+details.meal>summary::-webkit-details-marker{display:none}
+details.meal>summary span{font-weight:500;color:var(--accent);font-size:.95rem}
+.body{padding:0 14px 8px}
+h3{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:12px 0 2px}
+.it{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.it:last-child{border-bottom:0}
+.it input{width:20px;height:20px;accent-color:var(--accent);flex:none}
+.it .t{flex:1;min-width:0}
+.it .t small{color:var(--muted);display:block;font-size:.8rem}
+.it .g{color:var(--muted);font-size:.75rem;text-align:right;line-height:1.3}.it .g small{display:block;font-size:.72rem}
+.step{display:flex;align-items:center;gap:6px}
+.step button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--text);font-size:1rem;cursor:pointer}
+.step span{min-width:16px;text-align:center;white-space:nowrap;font-size:.9rem}
+.custom{display:flex;gap:8px;margin:4px 0 10px}
+.custom input{flex:1;min-width:0;padding:9px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit}
+.custom button,.clear{padding:9px 14px;border-radius:10px;border:0;background:var(--accent);color:#fff;font:inherit;cursor:pointer}
+.clear{background:var(--card);color:var(--muted);border:1px solid var(--line);width:100%;margin-top:6px}
+h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:20px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.lab{display:flex;justify-content:space-between}
+.res{background:var(--accent-bg);border-color:transparent;text-align:center}
+.res .big{font-size:2.6rem;font-weight:700;color:var(--accent);line-height:1.1}
+.res .sub{color:var(--muted);margin-top:4px}
+.res.warn{background:var(--warn-bg)}
+.res.warn .big{color:var(--warn)}
+.stats{display:flex;justify-content:space-around;margin-top:12px;font-size:.9rem;color:var(--muted)}
+.stats b{display:block;color:var(--text);font-size:1.1rem}
+.note{margin-top:10px;font-size:.9rem}
+.foot{color:var(--muted);font-size:.8rem;margin:14px 0 8px}
+details.set summary{cursor:pointer;color:var(--muted);font-size:.9rem;margin-top:14px}
+details.set input{width:70px;padding:6px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit}
+.sticky{flex-direction:column;align-items:stretch;gap:6px}.srow{display:flex;justify-content:space-between}.tabs{display:flex;gap:4px}.tabs button{flex:1;padding:7px 2px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit;font-size:.78rem;cursor:pointer}.tabs button.on{background:var(--accent);color:#fff;border-color:var(--accent)}.screen{display:none}.mh{display:flex;justify-content:space-between;align-items:baseline;margin:6px 0 10px;font-size:1.15rem}.mh span{color:var(--accent);font-size:.9rem}details.grp{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;padding:0 14px}details.grp>summary{cursor:pointer;padding:13px 0;font-weight:600;font-size:.95rem}details.grp>summary span{color:var(--accent);font-weight:500;font-size:.8rem}
+.pbtn{padding:9px 14px;border-radius:10px;border:0;background:var(--accent);color:#fff;font:inherit;cursor:pointer}.pbtn[disabled]{opacity:.45;cursor:default}.pbtn.sec{background:var(--card);color:var(--text);border:1px solid var(--line)}.phbtns{display:flex;gap:8px}.ph{margin-bottom:10px}.th{width:64px;height:64px;object-fit:cover;border-radius:8px;margin:8px 6px 0 0}.ph textarea{width:100%;margin-top:8px;padding:9px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit}.ph .status{margin-top:8px;font-size:.9rem;color:var(--muted)}.rtab{width:100%;border-collapse:collapse;margin-top:10px;font-size:.88rem}.rtab td{padding:7px 3px;border-bottom:1px solid var(--line);vertical-align:top}.rtab input{width:62px;padding:6px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit}.rm{border:0;background:none;color:var(--muted);font-size:1.2rem;cursor:pointer}.rtot{margin-top:10px}
+.exg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.exg label{font-size:.75rem;color:var(--muted);display:flex;flex-direction:column;gap:3px}.exg input{padding:7px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;width:100%}.it .ed{flex:none}
+</style>
+</head>
+<body>
+<main>
+<h1>Quanta whey oggi?</h1>
+<div class="sticky"><div class="srow"><span>Prot <b id="top-eat">0 g</b></span><span><b id="top-kcal">0</b> kcal</span><span>Whey <b id="top-whey">–</b></span></div><div class="tabs" id="tabs"></div></div>
+
+<div id="meals"></div>
+
+<div id="screen-tot" class="screen"><h2>Riepilogo del giorno</h2><div class="card" id="recap"></div>
+<h2>Micronutrienti</h2>
+<div class="card" id="micro"></div>
+<h2>Aggiungi altro</h2>
+<div class="custom">
+<input id="cn" placeholder="Altro (es. barretta)" aria-label="Nome alimento">
+<input id="cp" type="number" inputmode="decimal" placeholder="P" style="max-width:56px" aria-label="Proteine">
+<input id="cc" type="number" inputmode="decimal" placeholder="C" style="max-width:56px" aria-label="Carboidrati">
+<input id="cf" type="number" inputmode="decimal" placeholder="G" style="max-width:56px" aria-label="Grassi">
+<button id="add">Aggiungi</button>
+</div>
+<div id="extras"></div>
+
+<h2>Obiettivo proteine</h2>
+<div class="card">
+<div class="lab"><span>Target giornaliero</span><b id="tv"></b></div>
+<input type="range" id="target" min="107" max="140" step="1" value="130">
+<div class="lab" style="color:var(--muted);font-size:.8rem"><span>107 g (minimo)</span><span>140 g</span></div>
+</div>
+
+<h2>Risultato</h2>
+<div class="card res" id="res">
+<div class="sub">Whey da prendere</div>
+<div class="big" id="big">–</div>
+<div class="sub" id="sub"></div>
+<div class="stats">
+<div><b id="s-eat">0</b>proteine</div>
+<div><b id="s-miss">0</b>mancano</div>
+<div><b id="s-prot">0</b>da whey</div>
+</div>
+<div class="stats"><div><b id="s-kcal">0</b><span id="kl">kcal</span></div><div><b id="s-c">0</b>carboidrati</div><div><b id="s-f">0</b>grassi</div></div>
+<div class="note" id="kn"></div>
+<div class="note" id="note"></div>
+</div>
+<button class="clear" id="clear">Azzera tutto</button>
+
+<details class="set"><summary>Impostazioni whey</summary>
+<p class="foot">Proteine per 100 g di polvere (vedi etichetta) e dose massima del piano.</p>
+<label>Prot./100 g <input type="number" id="pp" value="80" min="50" max="100"></label>
+<label style="margin-left:10px">Max g <input type="number" id="mx" value="25" min="10" max="50"></label>
+<label style="margin-left:10px">kcal obiettivo <input type="number" id="kt" value="2800" min="1500" max="5000" style="width:80px"></label>
+</details>
+<p class="foot">Stime (±3-5 g per voce, di più per pizza e piatti al forno). P = proteine, C = carboidrati, G = grassi; kcal = 4P + 4C + 9G. Pasta: + e − vanno a mezza porzione (40 g). Carne e pesce: porzione della mensa stimata dalle tue foto (circa 130 g di carne e 150 g di pesce cotti), + e − vanno a mezza porzione. Non ho trovato le grammature ufficiali della mensa ERSU. L’olio a crudo extra si aggiunge in “Condimenti extra”.<br>Verificati su tabelle INRAN/CREA o etichette: pasta, pollo, tacchino, merluzzo, uova, latte, pane, fette biscottate. Manzo e vitello sono stimati dal crudo; pizza, piatti al forno, condimenti, impanati, salsiccia, scatolette e yogurt (varia con la marca) non sono verificati.</p>
+</div>
+</main>
+
+<script>
+// voce: [nome, descrizione, proteine, carboidrati, grassi, max, passo, unità]  (kcal = 4P + 4C + 9G)
+const P=(n,d,p,c,f)=>[n,d,p,c,f,2,.5,'porz.'];
+const M=(n,p,c,f)=>[n,'per 100 g cotti',p,c,f,4,.5,'×100 g'];
+const Q=(n,p,c,f,w)=>{const k=w/100,r=x=>Math.round(x*10)/10;return [n,'porzione mensa ~'+w+' g cotti',r(p*k),r(c*k),r(f*k),3,.5,'porz.']};
+const PRIMI=['Primi (80 g di pasta o riso secchi, condimento incluso)',[
+P('Pasta in bianco o con olio','con 10 g di olio',10,58,11),
+P('Pasta al pomodoro o basilico','con 10 g di olio',11,63,11),
+P('Pasta al ragù di carne','~70 g di sugo di carne',20,62,12),
+P('Pasta al tonno','~50 g di tonno, 10 g di olio',22,58,12),
+P('Pasta alla carbonara','1 uovo, guanciale, pecorino',24,58,31),
+P('Pasta all’amatriciana','guanciale e pecorino',17,62,26),
+P('Cacio e pepe','~35 g di pecorino',19,58,12),
+P('Pasta olio e parmigiano','10 g di olio, 20 g di parmigiano',17,58,17),
+P('Pasta alla norma','melanzane fritte, ricotta salata',16,64,22),
+P('Pasta con le sarde','',21,67,19),
+P('Pasta con le vongole','',16,60,13),
+P('Pasta al pesto','~30 g di pesto',12,59,16),
+P('Pasta con verdure','con 10 g di olio',12,62,12),
+P('Pasta e legumi','ceci, fagioli, lenticchie',15,62,8),
+P('Pasta al forno o lasagne','porzione ~250 g',22,40,24),
+P('Riso in bianco o al pomodoro','con 10 g di olio',6,62,11),
+P('Risotto','con parmigiano e burro',11,62,13),
+P('Anelletti al forno','porzione ~250 g, piatto palermitano',24,68,22),
+P('Pasta con i piselli','',14,66,12),
+P('Pasta con le melanzane','pomodoro e melanzane fritte',11,64,19),
+P('Pasta alla campagnola','sugo con verdure',12,64,12),
+P('Pasta con i broccoli','',12,62,12),
+P('Pasta e patate','',9,60,8),
+P('Pasta al sugo di salsiccia','~40 g di salsiccia',16,62,17),
+P('Pasta salmone e panna','',17,60,16),
+P('Passato di verdure con pasta','porzione ~300 ml, 40 g di pasta',7,36,6),
+P('Passato di legumi con pasta','fagioli o ceci, 40 g di pasta',12,50,7),
+P('Riso con i piselli','',11,71,11),
+P('Risotto al pomodoro','',7,64,12),
+P('Riso alle vongole','',16,63,12),
+P('Gnocchi al pomodoro','~200 g',8,66,5)
+]];
+const PIATTI=['Piatti unici',[
+P('Pizza margherita','intera, ~350 g',30,115,25),
+P('Pizza con salame, prosciutto o wurstel','intera',38,115,38),
+P('Pizza ai 4 formaggi','intera',40,115,45),
+P('Pizza capricciosa','intera, ~350 g',36,115,32),
+P('Pizza patatine e würstel','intera',40,135,50),
+P('Pizza con patatine','intera',32,140,38),
+P('Pizza tonno e cipolla','intera',48,120,33),
+['Trancio di pizza al taglio','~150 g',13,50,10,4,1,''],
+['Panino con hamburger','1 hamburger ~100 g, formaggio, insalata',28,40,22,2,1,''],
+['Panino con doppio hamburger','',46,42,40,2,1,'']
+]];
+const PANE=['Pane',[['Panino 50 g','',4.7,29,1,3,1,'']]];
+const SEC=[
+['Pesce (porzione mensa, + aggiunge mezza porzione)',[Q('Merluzzo o nasello',21,0,1,150),Q('Orata o branzino',20,0,4,150),Q('Salmone',23,0,13,150),Q('Pesce spada',22,0,7,150),Q('Filetto di pesce impanato',11,15,10,150),Q('Crocchetta o polpetta di pesce',12,13,9,80),['Tonno in scatola','1 scatoletta sgocciolata, in olio',19,0,8,3,1,''],['Sgombro o sardine in scatola','1 scatoletta',20,0,14,3,1,'']]],
+['Carne (porzione mensa, + aggiunge mezza porzione)',[Q('Pollo, petto',30,0,1,130),Q('Pollo, cosce o sovracosce (solo carne)',28,0,8,130),Q('Tacchino, fesa o fettine',30,0,1.5,130),Q('Manzo, fettina (fesa)',30,0,3,130),Q('Vitello, fettina o scaloppina',29,0,4,130),Q('Maiale, arista o lonza',27,0,10,130),Q('Hamburger di manzo',26,0,15,130),Q('Carne impanata (fettina o cotoletta)',20,12,13,130),Q('Straccetti o petto panato (pollo, tacchino)',22,12,10,130),Q('Polpette',16,8,12,100),Q('Polpettone o pizza di carne',16,6,13,120),Q('Spezzatino o carne al sugo',26,3,9,130),Q('Coniglio',27,0,5,150),['Spinacine','1 pezzo',7,7,5,6,1,''],['Salsiccia','1 tocco (~30 g)',5,0,7,12,1,'tocchi']]],
+['Uova e latticini',[['Frittata, 3 uova','',19,2,22,2,1,''],['Frittata, 2 uova','',13,1,15,2,1,''],['Mozzarella','~100 g',17,1,19,2,1,''],['Ricotta','~100 g',8.8,3.5,10.9,2,1,''],['Parmigiano','20 g',7,0,5.5,3,1,''],['Prosciutto cotto','porzione mensa ~80 g',16,1,6,3,.5,'porz.'],['Bresaola','~50 g',16,0,1,3,1,'']]],
+['Legumi',[['Lenticchie','porzione mensa ~150 g, con olio',13,30,6,3,.5,'porz.'],['Ceci, fagioli o altri legumi','~150 g cotti',12,22,3,3,.5,'porz.']]]
+];
+const V=(n,d,p,c,f)=>[n,d,p,c,f,3,1,''];
+const VERD=['Verdura e contorni (+ per aggiungere porzioni)',[V('Insalata mista o lattuga','~80 g',1.5,2,0),V('Spinaci cotti','~150 g',4,1.5,.5),V('Carote','~100 g',1,7,0),V('Broccoli o cavolfiore','~200 g',6,8,1),V('Zucchine','~200 g',2.5,6,.5),V('Melanzane o peperoni','~200 g',2,9,.5),V('Pomodori','~150 g',1.5,5,0),V('Fagiolini','~200 g',4,8,0),V('Patate','~200 g',4,34,0),V('Patatine fritte','piattino ~120 g',4,42,18)]];
+const F=(n,d,p,c,m)=>[n,d,p,c,0,m,1,''];
+const FRUTTA=['Frutta (+ per aggiungere pezzi)',[F('Mela','1 media',.5,22,6),F('Banana','1 media',1.3,25,6),F('Arancia','1 media',1.3,15,6),F('Pera','1 media',.7,16,6),F('Kiwi','1 pezzo',.9,8,6),F('Pesca o nettarina','1 media',1.3,10,6),F('Clementine','1 pezzo',.5,5,10),F('Uva','100 g',.6,16,4),F('Fragole','150 g',1,7,3),F('Anguria o melone','200 g',1.2,14,3)]];
+const BEV=['Bevande (dispenser mensa, bicchiere ~300 ml)',[['Coca-Cola','1 bicchiere ~300 ml',0,32,0,3,1,''],['Fanta','1 bicchiere ~300 ml',0,28,0,3,1,''],['Aranciata','1 bicchiere ~300 ml',0,30,0,3,1,''],['Succo ACE','1 bicchiere ~300 ml',.5,31,0,3,1,'']]];
+const CONDI=['Condimenti extra (olio crudo, burro, dolci)',[['Olio extra vergine','1 cucchiaino, 5 g',0,0,5,8,1,''],['Burro','10 g',0,0,8,4,1,''],['Burro di arachidi','1 cucchiaio, 15 g',4,3,7.5,4,1,''],['Miele','1 cucchiaio, 20 g',0,16,0,4,1,''],['Marmellata','20 g',0,13,0,4,1,'']]];
+const MEALS=[
+{id:'col',n:'Colazione',g:[
+ ['Uova e proteine',[['Uova','1 uovo (~53 g)',6.6,.3,4.6,4,1,''],['Yogurt greco','~170 g, 0-2% grassi',18,7,2,2,1,''],['Latte parzialmente scremato','250 ml',8.5,12.5,4,2,1,''],['Tonno in scatola','il lunedì, in olio',19,0,8,3,1,'']]],
+ ['Carboidrati',[['Fetta biscottata integrale','1 fetta (~9 g)',1.2,6,.7,8,1,''],['Pane 50 g','',4.7,29,1,3,1,''],['Mandorle','4-5',1.5,.5,3,6,1,''],['Fiocchi d’avena','1 pugno, ~35 g',4.7,21,2.5,4,1,'']]],
+ FRUTTA,CONDI
+]},
+{id:'pra',n:'Pranzo',g:[PRIMI,PIATTI,PANE,...SEC,VERD,FRUTTA,BEV,CONDI]},
+{id:'cen',n:'Cena',g:[PRIMI,PIATTI,PANE,...SEC,VERD,FRUTTA,BEV,CONDI]},
+{id:'ser',n:'Sera e spuntini',g:[['Spuntini',[['Latte parzialmente scremato','250 ml, dove va la whey',8.5,12.5,4,2,1,''],['Yogurt greco','~170 g, 0-2% grassi',18,7,2,2,1,''],['Frutta secca','30 g',5,3,17,3,1,''],['Formaggio','~50 g',10,0,12,3,1,''],['Fiocchi d’avena','1 pugno, ~35 g',4.7,21,2.5,4,1,'']]],FRUTTA,BEV,CONDI]}
+];
+let q={},extra=[];
+const $=id=>document.getElementById(id);
+const fmt=n=>(Math.round(n*10)/10).toString().replace('.',',');
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const open={col:true,pra:true,cen:true,ser:true};
+const kc=(p,c,f)=>4*p+4*c+9*f;
+
+function mealTotal(m){let p=0,c=0,f=0;m.g.forEach((g,gi)=>g[1].forEach((it,ii)=>{const n=q[m.id+gi+'_'+ii]||0;p+=n*it[2];c+=n*it[3];f+=n*it[4]}));return{p,c,f}}
+
+const TABS=[['col','Colazione'],['pra','Pranzo'],['cen','Cena'],['ser','Sera'],['tot','Totale']];
+const screens={},tabEls={};let tab='pra';
+function setTab(id){tab=id;Object.keys(screens).forEach(k=>{screens[k].style.display=k===id?'block':'none'});TABS.forEach(t=>{tabEls[t[0]].classList[t[0]===id?'add':'remove']('on')});window.scrollTo(0,0)}
+
+function build(){
+const box=$('meals');box.innerHTML='';const tb=$('tabs');tb.innerHTML='';
+TABS.forEach(t=>{const b=document.createElement('button');b.textContent=t[1];b.onclick=()=>setTab(t[0]);tb.appendChild(b);tabEls[t[0]]=b});
+MEALS.forEach(m=>{
+const sc=document.createElement('div');sc.className='screen';
+sc.innerHTML='<div class="mh"><b>'+m.n+'</b><span id="t-'+m.id+'"></span></div>';
+const ex=document.createElement('div');ex.id='ex-'+m.id;sc.appendChild(ex);
+m.g.forEach((g,gi)=>{
+const d=document.createElement('details');d.className='grp';d.open=gi===0;
+d.innerHTML='<summary>'+g[0]+'<span id="gc-'+m.id+gi+'"></span></summary>';
+g[1].forEach((it,ii)=>{
+const key=m.id+gi+'_'+ii,max=it[5]||1,stp=it[6]||1;
+const r=document.createElement('label');r.className='it';
+r.innerHTML='<input type="checkbox"><div class="t">'+esc(it[0])+(it[1]?'<small>'+esc(it[1])+'</small>':'')+'</div><div class="step" style="display:none"><button type="button">−</button><span></span><button type="button">+</button></div><button type="button" class="rm ed" style="display:none" aria-label="Modifica voce">✎</button><div class="g">P '+fmt(it[2])+' · C '+fmt(it[3])+' · G '+fmt(it[4])+'<small>'+Math.round(kc(it[2],it[3],it[4]))+' kcal</small></div>';
+const cb=r.querySelector('input'),st=r.querySelector('.step'),sp=st.querySelector('span'),ed=r.querySelector('.ed');
+const [mn,pl]=st.querySelectorAll('button');
+const upd=()=>{const v=q[key]||0;cb.checked=v>0;sp.textContent=fmt(v)+(it[7]?' '+it[7]:'');st.style.display=(max>1&&v>0)?'flex':'none';ed.style.display=v>0?'inline-block':'none';calc()};
+ed.onclick=e=>{e.preventDefault();const v=q[key]||0;if(v<=0)return;extra.push({n:it[0]+(v!==1?' ×'+fmt(v):''),p:it[2]*v,c:it[3]*v,f:it[4]*v,fib:null,zuc:null,sat:null,na:null,m:m.id});q[key]=0;upd();renderExtra()};
+cb.onchange=()=>{q[key]=cb.checked?1:0;upd()};
+mn.onclick=e=>{e.preventDefault();q[key]=Math.max(0,(q[key]||0)-stp);upd()};
+pl.onclick=e=>{e.preventDefault();q[key]=Math.min(max,(q[key]||0)+stp);upd()};
+d.appendChild(r);
+});
+sc.appendChild(d);
+});
+screens[m.id]=sc;box.appendChild(sc);
+});
+screens.tot=$('screen-tot');
+setTab(tab);renderExtra();calc();
+}
+
+function num(x){const n=parseFloat(x);return isFinite(n)&&n>=0?n:0}
+const FIELDS=[['p','Proteine g'],['c','Carboidrati g'],['f','Grassi g'],['fib','Fibre g'],['zuc','Zuccheri g'],['sat','Grassi saturi g'],['na','Sodio mg']];
+function exSummary(x){return esc(x.n)+'<br><small style="color:var(--muted)">'+(x.g>0?fmt(x.g)+' g · ':'')+'P '+fmt(x.p)+' · C '+fmt(x.c)+' · G '+fmt(x.f)+' · '+Math.round(kc(x.p,x.c,x.f))+' kcal</small>'}
+function renderExtra(){
+['tot'].concat(MEALS.map(m=>m.id)).forEach(k=>{
+const e=$(k==='tot'?'extras':'ex-'+k);if(!e)return;e.innerHTML='';
+extra.forEach((x,i)=>{
+if((x.m||'tot')!==k)return;
+const r=document.createElement('div');r.className='card';r.style.marginBottom='8px';
+const top=document.createElement('div');top.className='lab';
+const sm=document.createElement('span');sm.innerHTML=exSummary(x);
+const bt=document.createElement('span');bt.style.whiteSpace='nowrap';
+const ed=document.createElement('button');ed.type='button';ed.className='rm';ed.textContent='✎';ed.setAttribute('aria-label','Modifica');
+const rm=document.createElement('button');rm.type='button';rm.className='rm';rm.textContent='×';rm.setAttribute('aria-label','Elimina');
+bt.appendChild(ed);bt.appendChild(rm);top.appendChild(sm);top.appendChild(bt);r.appendChild(top);
+const pan=document.createElement('div');pan.className='exg';pan.style.display='none';
+const inputs={};
+const mk=(lab,val,cb,type)=>{const l=document.createElement('label');l.textContent=lab;const inp=document.createElement('input');inp.type=type||'number';if(!type)inp.inputMode='decimal';inp.value=val;inp.oninput=()=>cb(inp.value);l.appendChild(inp);pan.appendChild(l);return inp};
+mk('Nome',x.n,v=>{x.n=v;sm.innerHTML=exSummary(x)},'text');
+if(x.g>0)mk('Grammi',String(Math.round(x.g)),v=>{const ng=num(String(v).replace(',','.'));if(ng>0&&x.g>0){const k2=ng/x.g;['p','c','f','fib','zuc','sat','na'].forEach(f=>{if(x[f]!=null){x[f]=x[f]*k2;if(inputs[f])inputs[f].value=String(Math.round(x[f]*10)/10)}});x.g=ng;sm.innerHTML=exSummary(x);calc()}});
+FIELDS.forEach(fd=>{const key=fd[0];inputs[key]=mk(fd[1],x[key]==null?'':String(Math.round(x[key]*10)/10),v=>{const t=String(v).replace(',','.').trim();x[key]=t===''?(key==='p'||key==='c'||key==='f'?0:null):num(t);sm.innerHTML=exSummary(x);calc()})});
+r.appendChild(pan);
+ed.onclick=()=>{pan.style.display=pan.style.display==='none'?'grid':'none'};
+rm.onclick=()=>{extra.splice(i,1);renderExtra();calc()};
+e.appendChild(r);
+});
+});
+}
+
+function calc(){
+const target=+$('target').value;$('tv').textContent=target+' g';
+let P=0,C=0,F=0;
+extra.forEach(x=>{P+=x.p;C+=x.c;F+=x.f});
+let recap='';
+MEALS.forEach(m=>{const t0=mealTotal(m);P+=t0.p;C+=t0.c;F+=t0.f;const t={p:t0.p,c:t0.c,f:t0.f};extra.forEach(x=>{if(x.m===m.id){t.p+=x.p;t.c+=x.c;t.f+=x.f}});const k=Math.round(kc(t.p,t.c,t.f));const txt=(t.p+t.c+t.f)>0?fmt(t.p)+' g prot · '+k+' kcal':'';const el=$('t-'+m.id);if(el)el.textContent=txt;
+ m.g.forEach((g,gi)=>{let n=0;g[1].forEach((it,ii)=>{if((q[m.id+gi+'_'+ii]||0)>0)n++});const ge=$('gc-'+m.id+gi);if(ge)ge.textContent=n?' · '+n+' scelt'+(n>1?'e':'o'):''});
+ recap+='<div class="lab" style="padding:4px 0"><span>'+m.n+'</span><span>'+(txt||'–')+'</span></div>'});
+$('recap').innerHTML=recap;
+const mic={fib:0,zuc:0,sat:0,na:0};let micN=0;
+extra.forEach(x=>{let has=false;['fib','zuc','sat','na'].forEach(k=>{if(x[k]!=null){mic[k]+=x[k];has=true}});if(has)micN++});
+$('micro').innerHTML=micN?'<div class="lab"><span>Fibre</span><b>'+fmt(mic.fib)+' g</b></div><div class="lab"><span>Zuccheri</span><b>'+fmt(mic.zuc)+' g</b></div><div class="lab"><span>Grassi saturi</span><b>'+fmt(mic.sat)+' g</b></div><div class="lab"><span>Sodio</span><b>'+Math.round(mic.na)+' mg</b></div><small style="color:var(--muted)">Somma delle sole voci con questi dati ('+micN+'), inserite a mano. Le voci delle liste non li hanno.</small>':'<small style="color:var(--muted)">Nessun dato: compaiono per le voci inserite a mano (✎ per scriverli).</small>';
+const pp=(+$('pp').value||80)/100,mx=+$('mx').value||25,kt=+$('kt').value||2800;
+const miss=Math.max(0,target-P),raw=miss/pp;
+const dose=raw<=0.5?0:Math.ceil(raw/5)*5;
+const res=$('res');res.classList.remove('warn');
+let big,sub,note='',wp=0;
+if(P+C+F===0){big='–';sub='Spunta cosa hai mangiato.'}
+else if(miss<=0){big='0 g';sub='Non serve whey: hai già raggiunto il target.'}
+else if(dose>mx){big=mx+' g';res.classList.add('warn');wp=mx*pp;sub='Te ne servirebbero circa '+dose+' g.';note='Oltre '+mx+' g di polvere conviene aggiungere cibo (yogurt greco, uova, tonno). Con '+mx+' g arrivi a ~'+fmt(P+wp)+' g.'}
+else{big=dose+' g';wp=dose*pp;sub='di polvere, nel latte della sera (≈ '+fmt(wp)+' g di proteine).';if(P+wp<107)note='Sei sotto al minimo utile di 107 g: aggiungi cibo.'}
+const K=Math.round(kc(P+wp,C,F));
+$('s-eat').textContent=fmt(P)+' g';$('s-miss').textContent=fmt(miss)+' g';$('s-prot').textContent=fmt(wp)+' g';
+$('s-kcal').textContent=K;$('s-c').textContent=fmt(C)+' g';$('s-f').textContent=fmt(F)+' g';
+$('kl').textContent='kcal (obiettivo '+kt+')';
+const dk=K-kt;
+$('kn').textContent=(dk>=0?'+':'−')+Math.abs(dk)+' kcal rispetto all’obiettivo (whey inclusa)';
+$('big').textContent=big;$('sub').textContent=sub;$('note').textContent=note;
+$('top-eat').textContent=fmt(P)+' g';$('top-kcal').textContent=K;$('top-whey').textContent=big;
+}
+
+$('add').onclick=()=>{const g=id=>parseFloat(($(id).value||'0').replace(',','.'))||0;const p=g('cp'),c=g('cc'),f=g('cf');if(!(p>0||c>0||f>0))return;extra.push({n:$('cn').value.trim()||'Altro',p,c,f,m:'tot'});['cn','cp','cc','cf'].forEach(i=>$(i).value='');renderExtra();calc()};
+$('clear').onclick=()=>{q={};extra=[];renderExtra();build()};
+['target','pp','mx','kt'].forEach(i=>$(i).addEventListener('input',calc));
+build();
+</script>
+</body>
+</html>
